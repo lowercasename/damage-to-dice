@@ -1,6 +1,6 @@
 {
   "name": "damage-to-dice",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Calculator for converting average D&D damage values to die rolls",
   "main": "index.js",
   "repository": "https://github.com/lowercasename/damage-to-dice",
