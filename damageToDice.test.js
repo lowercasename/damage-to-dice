@@ -13,12 +13,12 @@ test("Best fit for 15 = 6d4", () => {
   });
 });
 
-test("Best fit for 16 = 6d4 (not exact)", () => {
+test("Best fit for 16 = 3d10 (not exact)", () => {
   expect(calculateBestFit(16)).toEqual({
-    die: { die: "d4", averageRoll: 2.5, sides: 4 },
-    numberOfDice: 6,
-    damage: 15,
-    percentage: 94,
+    die: { die: "d10", averageRoll: 5.5, sides: 10 },
+    numberOfDice: 3,
+    damage: 16.5,
+    percentage: 103,
   });
 });
 
