@@ -1,0 +1,18 @@
+{
+  "name": "damage-to-dice",
+  "version": "1.0.1",
+  "description": "Calculator for converting average D&D damage values to die rolls",
+  "main": "index.js",
+  "repository": "https://github.com/lowercasename/damage-to-dice",
+  "author": "Raphael Kabo <mail@raphaelkabo.com>",
+  "license": "BSD-3-Clause",
+  "private": false,
+  "type": "module",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
+  },
+  "devDependencies": {
+    "jest": "^29.4.1"
+  }
+}
