@@ -65,7 +65,7 @@ allPossibleRolls.forEach((roll) => {
   console.log(
     `${roll.numberOfDice}${roll.die.die}${numberToAsciiWithSign(bonus)} = ${
       roll.damage
-    } (${roll.percentage}% of target damage); min: ${
+    } (${Math.round(roll.percentage)}% of target damage); min: ${
       roll.numberOfDice * 1 + bonus
     }, max: ${roll.numberOfDice * roll.die.sides + bonus}`
   );

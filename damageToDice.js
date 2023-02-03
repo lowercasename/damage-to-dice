@@ -17,16 +17,14 @@ export const calculateBestFit = (damage, modifier = 0) => {
     (lowest, die) => {
       const numberOfDice = Math.round(damage / die.averageRoll);
       const damageWithDice = numberOfDice * die.averageRoll + modifier;
-      const percentage = Math.round(
-        (damageWithDice / (damage + modifier)) * 100
-      );
+      const percentage = (damageWithDice / (damage + modifier)) * 100;
       // If the percentage is closer to 100% than the previous best fit, use this one
       if (Math.abs(percentage - 100) < Math.abs(lowest.percentage - 100)) {
         return {
           die,
           numberOfDice,
           damage: damageWithDice,
-          percentage: Math.round((damageWithDice / (damage + modifier)) * 100),
+          percentage,
         };
       }
       return lowest;
@@ -44,15 +42,14 @@ export const calculateAllPossibleRolls = (damage, modifier = 0) => {
   return diceMap
     .map((die) => {
       const numberOfDice = Math.round(damage / die.averageRoll);
+      const damageWithDice = numberOfDice * die.averageRoll + modifier;
+      const percentage = (damageWithDice / (damage + modifier)) * 100;
       if (numberOfDice === 0) return null;
       return {
         numberOfDice,
         die,
-        damage: numberOfDice * die.averageRoll + modifier,
-        percentage: Math.round(
-          ((numberOfDice * die.averageRoll + modifier) / (damage + modifier)) *
-            100
-        ),
+        damage: damageWithDice,
+        percentage,
       };
     })
     .filter(Boolean);
