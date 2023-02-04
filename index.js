@@ -67,6 +67,8 @@ allPossibleRolls.forEach((roll) => {
       roll.damage
     } (${Math.round(roll.percentage)}% of target damage); min: ${
       roll.numberOfDice * 1 + bonus
-    }, max: ${roll.numberOfDice * roll.die.sides + bonus}`
+    }, max: ${roll.numberOfDice * roll.die.sides + bonus}; most rolls within ${
+      roll.standardDeviation.minimum
+    }-${roll.standardDeviation.maximum}`
   );
 });
